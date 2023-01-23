@@ -1622,6 +1622,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-vertical-timeline-component@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "@types/react-vertical-timeline-component@npm:3.3.3"
+  dependencies:
+    "@types/react": "*"
+  checksum: 4c49c64c4fb507d0c981c7a3c8afb05edd7c3cf5e3f0f95db10b6dd1d24ffb93e5e87f358bd82819ac41d5a85377948c016ce63bb9d2838e0ff9c78919033eaf
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:18.0.27":
   version: 18.0.27
   resolution: "@types/react@npm:18.0.27"
@@ -4088,6 +4097,7 @@ __metadata:
     "@types/node": 18.11.18
     "@types/react": 18.0.27
     "@types/react-dom": ^18.0.10
+    "@types/react-vertical-timeline-component": ^3.3.3
     next: latest
     next-pwa: ^5.6.0
     react: ^18.2.0
