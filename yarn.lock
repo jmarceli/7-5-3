@@ -1622,15 +1622,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-vertical-timeline-component@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "@types/react-vertical-timeline-component@npm:3.3.3"
-  dependencies:
-    "@types/react": "*"
-  checksum: 4c49c64c4fb507d0c981c7a3c8afb05edd7c3cf5e3f0f95db10b6dd1d24ffb93e5e87f358bd82819ac41d5a85377948c016ce63bb9d2838e0ff9c78919033eaf
-  languageName: node
-  linkType: hard
-
 "@types/react@npm:*, @types/react@npm:18.0.27":
   version: 18.0.27
   resolution: "@types/react@npm:18.0.27"
@@ -2019,13 +2010,6 @@ __metadata:
   version: 2.0.0
   resolution: "chownr@npm:2.0.0"
   checksum: c57cf9dd0791e2f18a5ee9c1a299ae6e801ff58fee96dc8bfd0dcb4738a6ce58dd252a3605b1c93c6418fe4f9d5093b28ffbf4d66648cb2a9c67eaef9679be2f
-  languageName: node
-  linkType: hard
-
-"classnames@npm:^2.2.6":
-  version: 2.3.2
-  resolution: "classnames@npm:2.3.2"
-  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
   languageName: node
   linkType: hard
 
@@ -3859,6 +3843,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-countdown@npm:^2.3.5":
+  version: 2.3.5
+  resolution: "react-countdown@npm:2.3.5"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ">= 15"
+    react-dom: ">= 15"
+  checksum: 24289f40591e88003052270e4eb9f7a87838e403ec2036fbd5ef99d57851c8d9739dae619d65f339494e582e34e2691c033a975bd8f7416730fc9beaf76a2b4b
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -3871,30 +3867,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-intersection-observer@npm:^8.26.2":
-  version: 8.34.0
-  resolution: "react-intersection-observer@npm:8.34.0"
-  peerDependencies:
-    react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
-  checksum: 7713fecfd1512c7f5a60f9f0bf15403b8f8bbd4110bcafaeaea6de36a0e0eb60368c3638f99e9c97b75ad8fc787ea48c241dcb5c694f821d7f2976f709082cc5
-  languageName: node
-  linkType: hard
-
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
-  languageName: node
-  linkType: hard
-
-"react-vertical-timeline-component@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "react-vertical-timeline-component@npm:3.6.0"
-  dependencies:
-    classnames: ^2.2.6
-    prop-types: ^15.7.2
-    react-intersection-observer: ^8.26.2
-  checksum: eb1d922826404fa0f41546977537510dd3b1b2036c2a42fbe58e7f5fd610053ac6fb34317516315d67a8392511839e990e59ad2433ff63fbe5c5b975b9edfbfc
   languageName: node
   linkType: hard
 
@@ -4097,12 +4073,11 @@ __metadata:
     "@types/node": 18.11.18
     "@types/react": 18.0.27
     "@types/react-dom": ^18.0.10
-    "@types/react-vertical-timeline-component": ^3.3.3
     next: latest
     next-pwa: ^5.6.0
     react: ^18.2.0
+    react-countdown: ^2.3.5
     react-dom: ^18.2.0
-    react-vertical-timeline-component: ^3.6.0
     typescript: 4.9.4
   languageName: unknown
   linkType: soft
