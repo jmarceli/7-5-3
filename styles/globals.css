@@ -17,7 +17,7 @@ a {
 
 button {
   width: 30%;
-  height: 50px;
+  height: 40px;
 }
 
 .buttons {
@@ -25,5 +25,9 @@ button {
   display: flex;
   flex-direction: row;
   align-items: space-between;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.countdown {
+  font-size: 30px;
 }
