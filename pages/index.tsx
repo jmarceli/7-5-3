@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import SimpleCounter from "./SimpleCounter";
+import { Link } from "@mui/material";
 
 const MINUTE = 60 * 1000; // in ms
 
@@ -99,6 +100,16 @@ export default function Home() {
           </Button>
         </Paper>
       )}
+      <Typography variant="caption" sx={{ mt: 2 }} component="div">
+        Sound Effect by{" "}
+        <Link href="https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=124464">
+          Universfield
+        </Link>{" "}
+        from{" "}
+        <Link href="https://pixabay.com/sound-effects//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=124464">
+          Pixabay
+        </Link>
+      </Typography>
     </Box>
   );
 }

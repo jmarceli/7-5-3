@@ -10,32 +10,41 @@ type Props = {
 
 const useAudio = () => {
   const [audio, setAudio] = useState(new Audio(AUDIO_PATH));
-  const [playing, setPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const toggle = () => setPlaying(!playing);
-
-  useEffect(() => {
-    playing ? audio.play() : audio.pause();
-  }, [playing, audio]);
+  const play = () => setIsPlaying(true);
 
   useEffect(() => {
-    audio.addEventListener("ended", () => setPlaying(false));
+    if (isPlaying) {
+      audio.currentTime = 0;
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying, audio]);
+
+  useEffect(() => {
+    audio.addEventListener("ended", () => setIsPlaying(false));
     return () => {
-      audio.removeEventListener("ended", () => setPlaying(false));
+      audio.removeEventListener("ended", () => setIsPlaying(false));
     };
   });
 
-  return [playing, toggle];
+  // see https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/hooks/#custom-hooks
+  return [isPlaying, play] as const;
 };
 
 export default function SimpleCounter({ title, timeout }: Props) {
   const counterRef = useRef<Countdown>(null);
   const [startTime, setStartTime] = useState(Date.now() + timeout);
   const [_, forceUpdate] = useReducer((x) => x + 1, 0);
-  const [playing, toggle] = useAudio();
+  const [_isPlaying, play] = useAudio();
 
   const handleStartClick = (): void => {
-    console.log(counterRef.current?.getApi());
+    if (!counterRef.current?.getApi().isPaused()) {
+      // if completed start from the beginning
+      setStartTime(Date.now() + timeout);
+    }
     counterRef.current?.getApi().start();
   };
 
@@ -44,6 +53,7 @@ export default function SimpleCounter({ title, timeout }: Props) {
   };
 
   const handleResetClick = (): void => {
+    counterRef.current?.getApi().pause();
     setStartTime(Date.now() + timeout);
   };
 
@@ -52,7 +62,7 @@ export default function SimpleCounter({ title, timeout }: Props) {
   };
 
   const handleComplete = (): void => {
-    toggle();
+    play();
     forceUpdate();
   };
 
