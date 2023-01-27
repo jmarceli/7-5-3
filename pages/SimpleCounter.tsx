@@ -9,12 +9,20 @@ type Props = {
 };
 
 const useAudio = () => {
-  const [audio, setAudio] = useState(new Audio(AUDIO_PATH));
+  const [audio, setAudio] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const play = () => setIsPlaying(true);
 
+  // workaround to avoid SSR issues, see https://github.com/vercel/next.js/discussions/17963
   useEffect(() => {
+    setAudio(new Audio(AUDIO_PATH));
+  }, []);
+
+  useEffect(() => {
+    if (!audio) {
+      return;
+    }
     if (isPlaying) {
       audio.currentTime = 0;
       audio.play();
@@ -24,6 +32,9 @@ const useAudio = () => {
   }, [isPlaying, audio]);
 
   useEffect(() => {
+    if (!audio) {
+      return;
+    }
     audio.addEventListener("ended", () => setIsPlaying(false));
     return () => {
       audio.removeEventListener("ended", () => setIsPlaying(false));
